@@ -124,7 +124,8 @@ export default function Hero() {
           </a>
           <a
             ref={secondaryBtnRef}
-            href="#"
+            href="/resume.pdf"
+            download="Jayasimha_K_Resume.pdf"
             className="btn-magnetic btn-secondary"
           >
             Download Resume <Download className={styles.btnIcon} size={18} />
