@@ -1,0 +1,98 @@
+.skillsSection {
+  padding: 8rem 0;
+  position: relative;
+  background-color: var(--bg-secondary);
+  z-index: 2;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.titleGroup {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.titleGroup h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.titleGroup p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.skillsLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.categoriesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.categoryCard {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.categoryTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: 0.5rem;
+}
+
+.skillsTagsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillBadge {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.skillBadge:hover {
+  background: rgba(0, 229, 255, 0.05);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 10px var(--glow-blue);
+  transform: translateY(-2px);
+  color: var(--accent-blue);
+}
+
+.sphereContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .skillsLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .sphereContainer {
+    order: -1; /* Place 3D sphere at top on mobile */
+  }
+}

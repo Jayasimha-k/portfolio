@@ -1,0 +1,99 @@
+.experienceSection {
+  padding: 8rem 0;
+  position: relative;
+  background-color: var(--bg-secondary);
+  z-index: 2;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.titleGroup {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.titleGroup h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.titleGroup p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.categoryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: 0.75rem;
+  font-family: var(--font-heading);
+}
+
+.columnHeader svg {
+  filter: drop-shadow(0 0 5px var(--column-glow));
+}
+
+.timelineCard {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.timelineCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--column-color);
+  box-shadow: 0 8px 25px var(--column-glow-shadow), 0 0 1px var(--column-color);
+}
+
+.cardDate {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--column-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.cardSubtitle {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.cardDesc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .timelineGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

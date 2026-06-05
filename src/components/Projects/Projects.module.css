@@ -1,0 +1,183 @@
+.projectsSection {
+  padding: 8rem 0;
+  position: relative;
+  background-color: var(--bg-primary);
+  z-index: 2;
+}
+
+.titleGroup {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.titleGroup h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.titleGroup p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+/* Card Styles */
+.cardContainer {
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2.25rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardInner:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 229, 255, 0.2);
+}
+
+/* Card Hover Radial Glow */
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(0, 229, 255, 0.08),
+    rgba(157, 78, 221, 0.03) 40%,
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+/* Custom Visual/Mockup display */
+.projectGraphic {
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(12, 12, 14, 0.95), rgba(5, 5, 5, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphicOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  z-index: 2;
+}
+
+.techBadge {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(0, 255, 163, 0.06);
+  border: 1px solid rgba(0, 255, 163, 0.12);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.projectTitle {
+  font-size: 1.45rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  z-index: 2;
+}
+
+.projectDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  z-index: 2;
+}
+
+.linksGroup {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: auto;
+  z-index: 2;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.projectLink:hover {
+  color: var(--accent-cyan);
+}
+
+.projectLink svg {
+  transition: transform 0.2s ease;
+}
+
+.projectLink:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 992px) {
+  .projectsGrid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+  .span2 {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,154 @@
+.aboutSection {
+  padding: 8rem 0;
+  position: relative;
+  background-color: var(--bg-primary);
+  z-index: 2;
+}
+
+.titleGroup {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.titleGroup h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.titleGroup p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.introText {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 3.5rem;
+  max-width: 90%;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.highlightCard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlightCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.highlightCard:hover::before {
+  transform: translateX(100%);
+}
+
+.highlightIcon {
+  color: var(--accent-cyan);
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 8px var(--glow-cyan));
+}
+
+.highlightCard h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.highlightCard p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.timelineContainer {
+  position: relative;
+  padding-left: 2.5rem;
+  border-left: 1px solid var(--border-glass);
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -3.05rem;
+  top: 0.25rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  border: 4px solid var(--bg-primary);
+  box-shadow: 0 0 8px var(--accent-blue);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.timelineItem:hover .timelineDot {
+  transform: scale(1.4);
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px var(--accent-cyan);
+}
+
+.timelineDate {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-purple);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timelineContentCard {
+  padding: 1.5rem;
+}
+
+.timelineTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.timelineInstitution {
+  color: var(--accent-cyan);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.timelineDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+  .introText {
+    max-width: 100%;
+  }
+}
